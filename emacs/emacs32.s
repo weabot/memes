@@ -1,8 +1,8 @@
-.section .data,
+.section .data
 EMACS_STRING:
 	.ascii "a hotkey for \0"
 
-.section .text,
+.section .text
 .globl _start
 _start:
 
