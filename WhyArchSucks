@@ -1,0 +1,141 @@
+From URL: https://lists.archlinux.org/pipermail/arch-general/2015-July/039443.html
+
+[arch-general] systemd new dependencies impede using OpenRC
+Daniel Micay danielmicay at gmail.com
+Thu Jul 2 13:24:42 UTC 2015
+
+    Previous message (by thread): [arch-general] systemd new dependencies impede using OpenRC
+    Next message (by thread): [arch-general] systemd new dependencies impede using OpenRC
+    Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+
+On 01/07/15 02:36 PM, João Miguel wrote:
+> First of all, thank you for such a quick reply.
+> 
+> Now, I don't want to preach. But I will not pretend I chose Arch Linux at
+> random. I chose it for many reasons, an important one of them being that
+> I liked the Arch Way, it made sense to me, and it seemed you were
+> following it. Now it seems to belong to a forgotten past.
+> 
+> On Wed, Jul 01, 2015 at 10:34:01AM -0400, Daniel Micay wrote:
+>> Arch is as much a systemd-based distribution as it is a Pacman-based
+>> distribution at this point. (...)
+> Is it now? https://wiki.archlinux.org/index.php/The_Arch_Way
+
+That's an unprotected page on the wiki, not an authoritative source on
+anything to do with the distribution.
+
+Arch has always been a simple distribution in terms of the developer
+perspective, not the user one. Using systemd made it simpler than ever
+in that regard because much more work is taken care of by both the
+systemd developers and all of the projects shipping unit files.
+
+It has never been a minimalist distribution. Splitting packages is rare
+compared to other distributions, and dependencies aren't made optional
+whenever possible.
+
+It has also never been a distribution offering much user freedom /
+choice compared to Gentoo and even Debian. There are very few cases
+where there are multiple packages offering different configurations of
+the same project. There's no equivalent to update-alternatives or the
+comparable uses of USE flags. Changing /bin/sh from Bash will be broken,
+as will changing the python symlink to point to python2 instead of
+python3 even though this works on some other distributions. It doesn't
+strive to offer choices like this, and never has. It would mean a *lot*
+more complexity on the development side of things along with major
+deviations from upstream.
+
+Arch is the *opposite* of a user-centric freedom. The opinion of users
+has no weight here. Only the developers have an opinion, and there
+aren't voting systems as there are in Debian. Technical decisions are
+made based on merit via consensus among the developers, not popularity.
+
+
+> it is not simple, not minimalist, and not user-centric.
+
+Certainly not minimalist, but those other two claims are questionable.
+
+Arch has *never* been minimalist... a Linux kernel with every module
+available and every feature enabled at least when there's no non-bloat
+related cost, feature-packed/complex GNU tools, nearly all optional
+features enabled across all the packages, etc.
+
+> However, making so many packages depend on it so that any basic desktop
+> usage (in the case of the util-linux dependency, even non-graphical usage)
+> does break one principle listed in the aforementioned page: freedom. In
+> fact, I ought to quote it:
+
+Arch is the opposite of a distribution with lots of user freedom. Users
+will come and go based on whether they like the technical decisions made
+by the developers. The popularily of those decisions has no impact on
+how things are done, regardless of how vocal users are about it.
+
+> Nonetheless, respecting the quoted principle, I could easily replace
+> systemd by OpenRC when I chose to. Note that just last month, over 3
+> years had passed after systemd was adopted, and I could still use
+> OpenRC. Now, for whatever reason, the principle was broken without
+> notice. I'd expect news or an email in this mailing list, to which I've
+> been paying close attention (though I knew less than the authors about
+> most problems...).
+
+You can still use it, it's just becoming increasing more difficult at a
+pretty steady pace. Those packages didn't suddenly pick up systemd
+dependencies in the past few weeks / months anyway. The version control
+logs disprove the claim that there are many recent changes.
+
+>> Upstreams are integrating support for systemd features and Arch is going
+>> to be enabling them, whether it's sd_notify support or something else.
+> Upstream? Then why is it that for the same versions of the same
+> packages, say, in Gentoo they are not dependencies? Example, compare
+> these two:
+
+Gentoo has USE flags so features can be optional at compile-time. Many
+of the packages with dependencies on systemd in Arch link against
+libsystemd, and we don't split up the package as is the norm here. If
+there's a package with an *unnecessary* dependency on systemd, you can
+and should file a bug. I don't think there are many that depend on it
+and don't use it.
+
+> That doesn't mean I want to compile everything. Or that you should have
+> packages for, say, OpenRC. The packages in the repos are not my choice,
+> I'm not asking to choose which ones should be on the official repos,
+> that's what the unofficial repos and the AUR are for. It just means you
+> shouldn't suppose people have these or those packages installed, but
+> that instead, and as you did before, even years after systemd being
+> default, you should provide whatever you want, open the doors you want,
+> not closing any others. Minimalism means minimal dependencies too.
+
+
+> If I wanted systemd bloat and a dash of hypocrisy
+
+What hypocrisy? When have you seen the developers state that they care
+about user freedom, or that the distribution is based on minimalism?
+
+Community memes don't define the distribution, technical choices by the
+developers do. It's clearly not based on what you say it is, and *never*
+has been. It has always used significantly more disk space and a
+measurable amount of additional memory than Debian and especially Gentoo
+as a consequence of keeping things simple (again, from a development
+perspective).
+
+
+ I'd stay in Windows
+> installing Internet Explorer... I worry the suggestions to change distro
+> The point is not one of telling what the devs should
+> or shouldn't do
+
+That's what you're doing.
+
+> but of remembering the principles upon which the community is based.
+
+You can claim that the community is based on a set of principles, but it
+has nothing to do with technical decisions by the developers. Memes
+about minimalism and user freedom != actual distribution policy /
+principles / history.
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 819 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.archlinux.org/pipermail/arch-general/attachments/20150702/91eece3b/attachment.asc>
