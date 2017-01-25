@@ -9,6 +9,7 @@ _start:
 BEGIN_LOOP:
  push EMACS_STRING
  call printf
+ add $4, %rsp
  jmp BEGIN_LOOP
 
 END_LOOP: 
